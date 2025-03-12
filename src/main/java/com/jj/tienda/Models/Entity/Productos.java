@@ -1,117 +1,111 @@
 package com.jj.tienda.Models.Entity;
 
-import javax.validation.constraints.Min;
-import javax.validation.constraints.NotEmpty;
-import javax.validation.constraints.Size;
-
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 
 //La funcion de esta clase + @Entity va a crear la tabla
 //Gamas en el SGBD --> Create Table
 @Entity
-@Table(name = "Productos")
+@Table(name = "productos")
 public class Productos {
-    
-    @Id //primary key
-    private String productoid;
-    
-    @Column(name = "nombre_producto", length=70, nullable = true)
-    @NotEmpty
-    private String nombre_producto;
-    
-    @Column(name = "marca", length=200, nullable = true)
-    @NotEmpty
-    private String marca;
-    
-    @Column(name = "tipo", length=200, nullable = true)
-    @NotEmpty
-    private String tipo;
-    
-    @Column(name = "precio", nullable = true)
-    @Min(0)
-    private double precio;
-    
-    @Column(name = "imagen",nullable = true)
-    @NotEmpty
-    private String imagen;
 
-    @Column(name = "descripcion", length=200, nullable = true)
-    @NotEmpty
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "productoid") // Aquí indicamos el nombre real de la base de datos
+    private Integer id;
+
     private String descripcion;
+    private String imagen;
+    private String marca;
 
-    public Productos(){}
-    public Productos(String productoid, String nombre_producto, String marca, String tipo, double precio, String imagen, String descripcion){
-        this.setProductoid(productoid);
-        this.setNombre_producto(nombre_producto);
-        this.setMarca(marca);
-        this.setTipo(tipo);
-        this.setPrecio(precio);
-        this.setImagen(imagen);
-        this.setDescripcion(descripcion);
-    }
+    @Column(name = "nombre_producto")
+    private String nombreProducto; // Asegurar coincidencia con la BD
 
-    public void setProductoid(String id){
-        this.productoid = id; 
-    }
-    public String getProductoid(){
-        return this.productoid;
-    }
+    private Double precio;
+    private String tipo;
+    private Integer stock;
 
-    public void setNombre_producto(String nombre_producto){
-        this.nombre_producto = nombre_producto;
-    }
-    public String getNombre_producto(){
-        return this.nombre_producto;
+    @ManyToOne
+    @JoinColumn(name = "sabor_id")
+    private Sabores sabor;
+
+    // Getters y Setters
+    public Integer getId() {
+        return id;
     }
 
-    public void setMarca(String marca){
-        this.marca = marca;
-    }
-    public String getMarca(){
-        return this.marca;
+    public void setId(Integer id) {
+        this.id = id;
     }
 
-    public void setTipo(String tipo){
-        this.tipo = tipo;
-    }
-    public String getTipo(){
-        return this.tipo;
+    public String getDescripcion() {
+        return descripcion;
     }
 
-    public void setPrecio(double precio){
-        this.precio = precio;
-    }
-    public double getPrecio(){
-        return this.precio;
-    }
-
-    public void setImagen(String imagen){
-        this.imagen = imagen;
-    }
-    public String getImagen(){
-        return this.imagen;
-    }
-
-    public void setDescripcion(String descripcion){
+    public void setDescripcion(String descripcion) {
         this.descripcion = descripcion;
     }
-    public String getDescripcion(){
-        return this.descripcion;
+
+    public String getImagen() {
+        return imagen;
     }
 
-    @Override
-    public String toString() {
-        return 
-                "<" + this.productoid + "," 
-                + this.nombre_producto + "," 
-                + this.marca + "," 
-                + this.tipo + "," 
-                + this.precio + "," 
-                + this.imagen + "," 
-                + this.descripcion + ">";
+    public void setImagen(String imagen) {
+        this.imagen = imagen;
+    }
+
+    public String getMarca() {
+        return marca;
+    }
+
+    public void setMarca(String marca) {
+        this.marca = marca;
+    }
+
+    public String getNombreProducto() {
+        return nombreProducto;
+    }
+
+    public void setNombreProducto(String nombreProducto) {
+        this.nombreProducto = nombreProducto;
+    }
+
+    public Double getPrecio() {
+        return precio;
+    }
+
+    public void setPrecio(Double precio) {
+        this.precio = precio;
+    }
+
+    public String getTipo() {
+        return tipo;
+    }
+
+    public void setTipo(String tipo) {
+        this.tipo = tipo;
+    }
+
+    public Integer getStock() {
+        return stock;
+    }
+
+    public void setStock(Integer stock) {
+        this.stock = stock;
+    }
+
+    public Sabores getSabor() {
+        return sabor;
+    }
+
+    public void setSabor(Sabores sabor) {
+        this.sabor = sabor;
     }
 
 }
