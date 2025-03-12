@@ -3,11 +3,6 @@
   
     <div layout:fragment="MainBase">
         <!-- Contenido principal -->
-        
-            
-
-</html>
-<body>
     <div class="container mt-4">
         <h2 class="text-center mb-4">Sabores de Vapers</h2>
 
@@ -19,12 +14,11 @@
                         <h5 class="card-title" th:text="${sabor.nombre ?: 'Sin Nombre'}"></h5>
                         <p class="card-text" th:text="${sabor.descripcion ?: 'Sin Descripción'}"></p>
                         <p><strong>Precio:</strong> $<span th:text="${sabor.precio ?: '0.00'}"></span></p>
+                        <a href="#" class="btn btn-primary">Comprar</a>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 
-    <script th:src="@{/js/bootstrap.bundle.min.js}"></script>
-</body>
 </html>

@@ -2,8 +2,28 @@
       layout:decorate="~{/www/layout/base}">
   
     <div layout:fragment="MainBase">
-        <!-- Contenido principal -->
-        
-            
-
+      <!-- Sección Principal -->
+      <section class="hero text-center text-white">
+          <div class="container">
+              <h1>¡Bienvenido a la mejor tienda de vapers!</h1>
+              <p>Descubre los mejores dispositivos y sabores para tu experiencia de vapeo.</p>
+              <a href="/Productos/index" class="btn btn-custom btn-lg">Ver Productos</a>
+          </div>
+      </section>
+  
+      <!-- Productos Destacados -->
+      <section class="container mt-5">
+          <h2 class="text-center mb-4">Productos Destacados</h2>
+          <div class="row">
+              <div class="col-md-4 mb-4" th:each="producto : ${productosDestacados}">
+                  <div class="card">
+                      <img th:src="@{'/img/' + ${producto.imagen}}" class="card-img-top" alt="Imagen Producto">
+                      <div class="card-body">
+                          <h5 class="card-title" th:text="${producto.nombreProducto}"></h5>
+                          <p><strong>Precio:</strong> $<span th:text="${producto.precio}"></span></p>
+                          <a href="#" class="btn btn-custom">Comprar</a>
+                      </div>
+                  </div>
+              </div>
+          </div>
 </html>
