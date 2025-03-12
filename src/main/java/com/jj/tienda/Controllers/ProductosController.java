@@ -1,25 +1,27 @@
 package com.jj.tienda.Controllers;
 
-import com.jj.tienda.Models.Services.ProductosServices;
 import com.jj.tienda.Models.Entity.Productos;
-import org.springframework.beans.factory.annotation.Autowired;
+import com.jj.tienda.Models.Services.ProductosServices;
+
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
+import org.springframework.ui.Model; 
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
 
 import java.util.List;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
+@RequestMapping("/Productos")
 public class ProductosController {
+
     @Autowired
-    private ProductosServices productosService;
+    private ProductosServices gamasService;
 
-    @GetMapping("/productos")
-    public String getProductos(Model modelo) {
-        List<Productos> productos = this.productosService.getAll();
-        modelo.addAttribute("Lproductos", productos);
-        return "/www/productos/listar";
+    @GetMapping("/index")
+    public String productos(Model model) {
+        List<Productos> productos = gamasService.getAll();
+        model.addAttribute("productos", productos);
+        return "www/productos/index";
     }
-
 }
