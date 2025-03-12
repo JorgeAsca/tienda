@@ -1,0 +1,36 @@
+<html xmlns:th="http://www.thymeleaf.org" layout:decorate="~{/frontend/layout/base}">
+
+<div layout:fragment="MainBase">
+    <!-- Contenido principal -->
+    <div class="container">
+
+        <section id="servicios">
+            <h2>Listado de Productos</h2>
+            <table class="striped">
+                <thead>
+                    <tr>
+                        <th>Producto</th>
+                        <th>Marca</th>
+                        <th>Tipo</th>
+                        <th>Precio</th>
+                        <th>Imagen</th>
+                        <th>Descripcion</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <tr th:each="producto : ${Lproductos}">
+                        <td th:href=>
+                            <a th:href="@{/productos/{id}(id=${producto.productoid})}">
+                                <span th:text="${producto.productoid}"></span>
+                            </a>
+                        </td>
+                        <td th:text="${producto.Descripcion}"></td>
+                        <td>    </td>
+                    </tr>
+            </table>
+        </section>
+    </div>
+</div>
+
+</html>

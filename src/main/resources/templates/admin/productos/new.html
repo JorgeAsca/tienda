@@ -1,0 +1,65 @@
+<html xmlns:th="http://www.thymeleaf.org"
+      layout:decorate="~{/admin/layout/base}"
+>
+
+<div layout:fragment="MainBase">
+       <!-- Contenido principal -->
+    <div class="container">
+        <h4>Nueva Categoria</h4>
+        <!-- Botón para abrir el modal -->
+      <!--  <a class="btn waves-effect waves-light green modal-trigger" href="#modalGama">
+            <i class="material-icons left">add</i>Nueva Gama
+        </a>
+    -->
+        <!-- Modal de Formulario -->
+        <div id="modalGama" class="modal1">
+            <div class="modal-content">
+                <h5>Insertar Nueva Gama</h5>
+                <form>
+                    <!-- Campo Nombre -->
+                    <div class="input-field">
+                        <input type="text" id="nombre" name="nombre" required>
+                        <label for="nombre">Nombre de la Gama</label>
+                    </div>
+
+                    <!-- Campo Descripción -->
+                    <div class="input-field">
+                        <textarea id="descripcion" class="materialize-textarea" required></textarea>
+                        <label for="descripcion">Descripción</label>
+                    </div>
+
+                    <!-- Campo Imagen -->
+                    <div class="file-field input-field">
+                        <div class="btn blue">
+                            <span><i class="material-icons">image</i></span>
+                            <input type="file">
+                        </div>
+                        <div class="file-path-wrapper">
+                            <input class="file-path validate" type="text" placeholder="Sube una imagen">
+                        </div>
+                    </div>
+                </form>
+            </div>
+
+            <!-- Botones -->
+            <div class="modal-footer">
+                <a href="#" class="modal-close btn grey">Cancelar</a>
+                <button type="submit" class="btn green">Guardar</button>
+            </div>
+        </div>
+        </div>
+
+        <!-- Importar Materialize JS -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+        <script>
+        // Inicializar modales
+       /* document.addEventListener('DOMContentLoaded', function() {
+            var elems = document.querySelectorAll('.modal');
+            M.Modal.init(elems);
+        }); */
+        </script>
+    
+    </div>
+</div>
+
