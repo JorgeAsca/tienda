@@ -17,18 +17,11 @@ public class SiteController {
         return "www/site/index";
     }
 
-    // @GetMapping("/Productos")
-    // public String productos(Model model) {
-    //     model.addAttribute("title", "Productos");
-    //     return "www/site/contacto";
-    // }
-    
-
-    // @GetMapping("/contacto")
-    // public String contacto(Model model) {
-    //     model.addAttribute("title", "Contacto");
-    //     return "www/site/contacto";
-    // }
+    @GetMapping("/contecto")
+    public String contacto(Model model) {
+        model.addAttribute("title", "Contacto");
+        return "www/site/contecto";
+    }
 
     
 }
