@@ -1,8 +1,8 @@
-USE PorfolioDB; -- Asegúrate de estar en la base de datos correcta
+-- USE PorfolioDB; -- Asegúrate de estar en la base de datos correcta
 
 -- Insertar sabores de vapers con imagen y precio
 INSERT INTO sabores (nombre, descripcion, imagen, precio) VALUES
-('Blueberry Ice', 'Sabor intenso de arándano con un toque de frescura', '/imagenes/blueberry.png', 5.99),
+('Blueberry Ice', 'Sabor intenso de arándano con un toque de frescura', 'blueberry.png', 5.99),
 ('Mango Passion', 'Exótica combinación de mango y maracuyá', 'mango_passion.jpg', 6.49),
 ('Watermelon Chill', 'Refrescante sandía con un toque de menta', 'watermelon_chill.jpg', 5.79),
 ('Strawberry Banana', 'Mezcla dulce de fresa con banana', 'strawberry_banana.jpg', 6.29),

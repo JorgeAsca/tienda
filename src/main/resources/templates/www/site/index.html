@@ -1,30 +1,63 @@
-<html xmlns:th="http://www.thymeleaf.org"
-      layout:decorate="~{/www/layout/base}">
-  
+<html xmlns:th="http://www.thymeleaf.org" layout:decorate="~{/www/layout/base}">
+
+<head>
+    <link rel="stylesheet" th:href="@{/css/index.css}">
+</head>
+
+<body>
     <div layout:fragment="MainBase">
-      <!-- Sección Principal -->
-      <section class="hero text-center text-white">
-          <div class="container">
-              <h1>¡Bienvenido a la mejor tienda de vapers!</h1>
-              <p>Descubre los mejores dispositivos y sabores para tu experiencia de vapeo.</p>
-              <a href="/Productos/index" class="btn btn-custom btn-lg">Ver Productos</a>
-          </div>
-      </section>
-  
-      <!-- Productos Destacados -->
-      <section class="container mt-5">
-          <h2 class="text-center mb-4">Productos Destacados</h2>
-          <div class="row">
-              <div class="col-md-4 mb-4" th:each="producto : ${productosDestacados}">
-                  <div class="card">
-                      <img th:src="@{'/img/' + ${producto.imagen}}" class="card-img-top" alt="Imagen Producto">
-                      <div class="card-body">
-                          <h5 class="card-title" th:text="${producto.nombreProducto}"></h5>
-                          <p><strong>Precio:</strong> $<span th:text="${producto.precio}"></span></p>
-                          <a href="#" class="btn btn-custom">Comprar</a>
-                      </div>
-                  </div>
-              </div>
-          </div>
-        
+        <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="../imagenes/carrusel/1.jpg" class="d-block w-100" alt="...">
+                </div>
+                <div class="carousel-item">
+                    <img src="../imagenes/carrusel/2.jpg" class="d-block w-100" alt="...">
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying"
+                data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying"
+                data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="card" style="width: 18rem;">
+                        <div class="card-body">
+                            <h5 class="card-title">Envios Gratis</h5>
+                            <p class="card-text">Consigue envios gratis en menos de 48 horas.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="card" style="width: 18rem;">
+                        <div class="card-body">
+                            <h5 class="card-title">Entrega en 24H</h5>
+                            <p class="card-text">¡Recíbelo al día siguiente! Pedidos antes de las 20:00</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="card" style="width: 18rem;">
+                        <div class="card-body">
+                            <h5 class="card-title">Entrega en Sabado</h5>
+                            <p class="card-text">Haz tu pedido antes de las 20:00 del Viernes. Recíbelo el Sabado</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
 </html>
