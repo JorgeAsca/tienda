@@ -25,20 +25,16 @@
     text-align: justify;
 }
 
-.carousel {
-    width: 100vw;  /* Ocupa todo el ancho de la pantalla */
-    margin-top: 80px;
+body, html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    overflow-x: hidden; /* Evita el desplazamiento horizontal */
 }
 
-.carousel-inner {
+.carousel, .carousel-inner, .carousel-item, .carousel img {
     width: 100%;
-}
-
-.carousel-item {
-    width: 100%;
-}
-
-.carousel-item img {
-    width: 100%;
-    object-fit: cover; /* Hace que las imágenes se ajusten sin deformarse */
+    margin: 0;
+    padding: 0;
+    max-width: 100%;
 }
