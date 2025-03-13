@@ -8,20 +8,28 @@ public class Sabores {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
+    @Column(name = "sabor_id")  // Especifica el nombre correcto de la columna
+    private Long id;
 
+    @Column(name = "nombre")
     private String nombre;
+
+    @Column(name = "descripcion")
     private String descripcion;
+
+    @Column(name = "imagen")
     private String imagen;
+
+    @Column(name = "precio")
     private Double precio;
 
     // Getters y Setters
-    public Integer getId() {
+    public long getId() {
         return id;
-    }
+        }
 
-    public void setId(Integer id) {
-        this.id = id;
+        public void setId(Long id) {
+        this.id = id.longValue();
     }
 
     public String getNombre() {

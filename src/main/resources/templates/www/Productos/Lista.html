@@ -1,27 +1,24 @@
-<html xmlns:th="http://www.thymeleaf.org" layout:decorate="~{/www/layout/base}">
-
-<div layout:fragment="MainBase">
-    <!-- Contenido principal -->
+<html xmlns:th="http://www.thymeleaf.org"
+      layout:decorate="~{/www/layout/base}">
+  
+    <div layout:fragment="MainBase">
+        <!-- Contenido principal -->
     <div class="container mt-4">
-        
-        <section id="servicios">
-            <h2 class="mb-4 text-center">Listado de Gamas</h2>
+        <h2 class="text-center mb-4">Sabores de Vapers</h2>
 
-            <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-4">
-                <div class="col" th:each="categoria : ${Lcategorias}">
-                    <div class="card h-100">
-                        <img th:src="${categoria.imagen}" class="card-img-top" alt="Imagen de la gama" style="object-fit: cover; height: 200px;">
-                        <div class="card-body">
-                            <h5 class="card-title" th:text="${categoria.tipo}"></h5>
-                            <p class="card-text" th:text="${categoria.descripcion}"></p>
-                        </div>
-                        <div class="card-footer text-center">
-                            <a th:href="@{/productos/categoria/{tipo}(tipo=${categoria.tipo})}" class="btn btn-primary">Ver más</a>
-                        </div>
+        <div class="row">
+            <div class="col-md-4 mb-4" th:each="sabor : ${sabores}">
+                <div class="card">
+                    <img th:src="${producto.imagen}" class="card-img-top" alt="Imagen del producto" style="object-fit: cover; height: 400px;">
+                    <div class="card-body">
+                        <h5 class="card-title" th:text="${producto.nombre ?: 'Sin Nombre'}"></h5>
+                        <p class="card-text" th:text="${producto.descripcion ?: 'Sin Descripción'}"></p>
+                        <p><strong>Precio:</strong> $<span th:text="${sabor.precio ?: '0.00'}"></span></p>
+                        <a href="#" class="btn btn-primary">Comprar</a>
                     </div>
                 </div>
             </div>
-        </section>
+        </div>
     </div>
-</div>
+
 </html>

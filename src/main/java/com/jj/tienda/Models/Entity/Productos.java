@@ -17,7 +17,7 @@ public class Productos {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "productoid") // Aquí indicamos el nombre real de la base de datos
+    @Column(name = "producto_id") // Aquí indicamos el nombre real de la base de datos
     private Integer id;
 
     private String descripcion;

@@ -1,50 +1,8 @@
-.barra-top {
-    position: fixed; 
-    top: 0;
-    left: 0;
-    width: 100%;
-    background-color: #333;
-    color: white;
-    text-align: center;
-    z-index: 1050; 
-    font-size: 14px;
-    font-weight: bold;
-    padding: 5px 0; /* Ajusta el padding solo en vertical */
-    margin: 0; /* Elimina el margen */
-}
-
 .navbar {
     position: fixed;
     top: 25px; /* Ajusta el top para que esté pegado */
     width: 100%;
-    z-index: 1040; 
     margin: 0; /* Elimina el margen */
     padding: 0; /* Elimina el padding */
     border-top: none; /* Asegúrate de que no hay borde */
-    margin-top: 9px;
-}
-
-/* Estilos adicionales para asegurar que no haya espacio en blanco */
-html, body {
-    margin: 0;
-    padding: 0;
-}
-
-.destacado {
-    color: #ffcc00;
-    font-weight: bold;
-}
-
-.countdown-block {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 16px;
-}
-
-.countdown span {
-    font-family: "Courier New", monospace;
-    font-size: 18px;
-    font-weight: bold;
-    padding: 0 4px;
 }

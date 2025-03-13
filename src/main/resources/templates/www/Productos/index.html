@@ -20,7 +20,7 @@ layout:decorate="~{/www/layout/base}">
           <div class="card product-card">
 
             <!-- Imagen del Producto -->
-            <img th:src="@{'/img/' + ${producto.imagen}}" class="card-img-top product-img" alt="Imagen Producto">
+            <img th:src="${producto.imagen}" class="card-img-top" alt="Imagen del producto" style="object-fit: cover; height: 400px;">
 
             <div class="card-body text-center">
               <h6 class="product-title" th:text="${producto.nombreProducto}"></h6>
@@ -34,13 +34,15 @@ layout:decorate="~{/www/layout/base}">
               <p class="price">
                 <span class="final-price" th:text="${producto.precio + '€'}"></span>
               </p>
+              <!-- Boto de comprar -->
+              <a href="#" class="btn btn-primary">Comprar</a>
             </div>
           </div>
         </div>
       </div>
     </div>
 
-    <script th:src="/js/bootstrap.bundle.min.js"></script>
+    <script th:src="@{/js/bootstrap.bundle.min.js}"></script>
     <script src="./js/navbar.js"></script>
   </div>
 
