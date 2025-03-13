@@ -1,17 +1,21 @@
-<html xmlns:th="http://www.thymeleaf.org" 
-layout:decorate="~{/www/layout/base}">
+<html xmlns:th="http://www.thymeleaf.org" layout:decorate="~{/www/layout/base}">
+
 <head>
   <title>Productos</title>
   <link rel="stylesheet" href="/webjars/bootstrap/5.3.3/css/bootstrap.min.css">
-    <!-- Vinculo con los iconos de botsrap 5.3.3 -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
-    <link rel="stylesheet" href="./css/estilos.css">
+  <!-- Vinculo con los iconos de botsrap 5.3.3 -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
+  <link rel="stylesheet" href="./css/estilos.css">
 </head>
 
 <body>
   <div layout:fragment="MainBase">
     <!-- Contenido principal -->
-
+    <style>
+      h2 {
+        margin-top: 100px;
+      }
+    </style>
     <div class="container mt-5">
       <h2 class="text-center mb-4">Nuestros Productos</h2>
 
@@ -20,7 +24,8 @@ layout:decorate="~{/www/layout/base}">
           <div class="card product-card">
 
             <!-- Imagen del Producto -->
-            <img th:src="${producto.imagen}" class="card-img-top" alt="Imagen del producto" style="object-fit: cover; height: 400px;">
+            <img th:src="${producto.imagen}" class="card-img-top" alt="Imagen del producto"
+              style="object-fit: cover; height: 400px;">
 
             <div class="card-body text-center">
               <h6 class="product-title" th:text="${producto.nombreProducto}"></h6>
