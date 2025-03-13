@@ -1,6 +1,8 @@
 <html xmlns:th="http://www.thymeleaf.org" layout:decorate="~{/www/layout/base}">
 
 <title>Contacto</title>
+<head>
+    <link rel="stylesheet" th:href="@{/css/responsive.css}">
 </head>
 
 <body>
@@ -14,19 +16,16 @@
                 <div class="col-md-6">
                     <div class="card shadow-lg p-4">
                         <div class="card-body1">
-                            <form id="contactForm" 
-                            th:object="${contacto}"
-                            th:action="@{/contacto}" 
-                            method="post">
+                            <form id="contactForm" th:object="${contacto}" th:action="@{/contacto}" method="post">
                                 <div class="mb-3">
                                     <label for="nombre" class="form-label">Nombre</label>
-                                    <input type="text" class="form-control" id="nombre" name="nombre" placeholder="Tu nombre"
-                                        required>
+                                    <input type="text" class="form-control" id="nombre" name="nombre"
+                                        placeholder="Tu nombre" required>
                                 </div>
                                 <div class="mb-3">
                                     <label for="email" class="form-label">Correo Electrónico</label>
-                                    <input type="email" class="form-control" id="email" name="email" placeholder="correo@example.com"
-                                        required>
+                                    <input type="email" class="form-control" id="email" name="email"
+                                        placeholder="correo@example.com" required>
                                 </div>
                                 <div class="mb-3">
                                     <label for="mensaje" class="form-label">Mensaje</label>

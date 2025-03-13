@@ -24,3 +24,7 @@
     font-family: 'Arial', sans-serif;
     text-align: justify;
 }
+
+.carousel-margin-top {
+    margin-top: 100px; /* Ajusta el valor como prefieras */
+}
