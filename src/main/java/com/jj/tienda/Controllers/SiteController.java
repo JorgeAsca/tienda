@@ -17,7 +17,7 @@ public class SiteController {
         return "www/site/index";
     }
 
-    @GetMapping("/contecto")
+    @GetMapping("/pagina-contecto")
     public String contacto(Model model) {
         model.addAttribute("title", "Contacto");
         return "www/site/contecto";

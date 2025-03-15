@@ -26,10 +26,13 @@
                     <li class="nav-item">
                         <a class="nav-link text-white" th:href="@{/contecto}">Contacto</a>
                     </li>
-                    <!-- Enlace al panel de administración solo para usuarios con rol ADMIN -->
-                    <li class="nav-item" sec:authorize="hasRole('ADMIN')">
-                        <a class="nav-link text-white" th:href="@{/admin}">Login</a>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" th:href="@{/login}">login</a>
                     </li>
+                    <!-- Enlace al panel de administración solo para usuarios con rol ADMIN -->
+                    <!-- <li class="nav-item" sec:authorize="hasRole('ADMIN')">
+                        <a class="nav-link text-white" th:href="@{/admin}">Login</a>
+                    </li> -->
                 </ul>
             </div>
         </div>
