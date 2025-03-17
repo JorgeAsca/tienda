@@ -10,7 +10,7 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 
 @RestController
-@RequestMapping("/imagenes") // 📌 Ruta base para acceder a las imágenes
+@RequestMapping("/imagenes") 
 public class FileController {
 
     @GetMapping("/{filename}")

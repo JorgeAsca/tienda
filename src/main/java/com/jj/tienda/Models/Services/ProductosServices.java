@@ -28,15 +28,17 @@ public class ProductosServices {
         return productosRepository.findAll();
     }
 
-    // Guardar un nuevo producto
-    public void guardar(Productos producto) {
-        productosRepository.save(producto);
+    public  Productos guardarProducto(Productos producto) {
+        return productosRepository.save(producto);
     }
 
-    // Eliminar un producto por ID
+    
     public void eliminar(Long id) {
         productosRepository.deleteById(id);
     }
+
+    
+    
 }
 
 

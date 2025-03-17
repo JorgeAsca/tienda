@@ -32,15 +32,5 @@ public class ProductosController {
         return "www/productos/index";
     }
 
-    @GetMapping("/nuevo")
-    public String mostrarFormularioNuevo(Model model) {
-        model.addAttribute("producto", new Productos());
-        return "admin/productos/form"; 
-    }
 
-    @PostMapping("/guardar")
-    public String guardarProducto(@ModelAttribute Productos producto) {
-        gamasService.guardar(producto);
-        return "redirect:/admin/productos"; 
-    }
 }

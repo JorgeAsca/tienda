@@ -14,13 +14,6 @@ public class AdminController {
     @Autowired
     private SaboresServices SaboresService;
 
-    @GetMapping("/admin/categorias")
-    public String verCategorias(Model model) {
-        // Obtener todas las categorías
-        List<Sabores> sabor = SaboresService.getAll();
-        model.addAttribute("sabor", sabor);
-        return "admin/sabor/index";  // Esta vista debe existir
-    }
 
     @GetMapping("/admin")
     public String admin() {
