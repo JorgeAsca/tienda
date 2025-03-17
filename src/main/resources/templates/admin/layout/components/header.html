@@ -25,10 +25,10 @@
                         <i class="bi bi-tags-fill me-2"></i> Ver Categorías
                     </a>
                 </li>
-                <li class="nav-item mt-auto">
-                    <a class="nav-link text-white d-flex align-items-center" th:href="@{/logout}" onclick="toggleSidebar()">
-                        <i class="bi bi-box-arrow-right me-2"></i> Logout
-                    </a>
+                <li class="nav-item mt-auto" >
+                    <form th:action="@{/logout}" method="post" class="d-flex align-items-center">
+                        <button type="submit" class="btn btn-outline-danger w-100 d-flex align-items-center justify-content-start">
+                            <i class="bi bi-box-arrow-right me-2"></i> Logout
                 </li>
             </ul>
         </div>
